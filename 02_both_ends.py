@@ -8,8 +8,14 @@ for menor que 2, retorne uma string vazia.
 """
 
 def both_ends(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    if isinstance(s, int):
+        s = str(s)
+    
+    if len(s) < 3:
+        return ''
+
+    duas_letras, ultimas_letras = s[:2], s[-2:]
+    return duas_letras + ultimas_letras
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -37,3 +43,5 @@ if __name__ == '__main__':
     test(both_ends, 'Hello', 'Helo')
     test(both_ends, 'a', '')
     test(both_ends, 'xyz', 'xyyz')
+    test(both_ends, 12334, '1234')
+    test(both_ends, 12, '')
