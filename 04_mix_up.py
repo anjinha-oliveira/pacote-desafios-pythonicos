@@ -13,8 +13,14 @@ Assuma que a e b tem tamanho 2 ou maior.
 """
 
 def mix_up(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    prefixo_de_a = a[0:2]
+    prefixo_de_b = b[0:2]
+
+    b_modificado = b.replace(prefixo_de_b, prefixo_de_a)
+    a_modificado = a.replace(prefixo_de_a, prefixo_de_b)
+
+    return a_modificado + ' ' + b_modificado
+    
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
