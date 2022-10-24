@@ -10,8 +10,17 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 """
 
 def not_bad(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    inicio_posicao = s.find('not')
+    fim_posicao = s.find('bad')
+    
+    if fim_posicao == -1:
+        return s
+
+    if fim_posicao < inicio_posicao:
+        return s
+
+    trecho = s[inicio_posicao:fim_posicao + 3]
+    return s.replace(trecho, 'good')
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
